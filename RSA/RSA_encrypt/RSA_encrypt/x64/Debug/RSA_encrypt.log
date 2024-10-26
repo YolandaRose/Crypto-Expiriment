@@ -1,0 +1,20 @@
+﻿  RSA_openssl.cpp
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(10,12): error C4996: 'RSA_new': Since OpenSSL 3.0
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(20,20): error C4996: 'PEM_read_RSAPrivateKey': Since OpenSSL 3.0
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(26,19): error C4996: 'PEM_read_RSA_PUBKEY': Since OpenSSL 3.0
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(38,134): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(36,16): error C4996: 'RSA_size': Since OpenSSL 3.0
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(37,49): error C4996: 'RSA_size': Since OpenSSL 3.0
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(38,15): error C4996: 'RSA_public_encrypt': Since OpenSSL 3.0
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(59,146): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(57,16): error C4996: 'RSA_size': Since OpenSSL 3.0
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(58,56): error C4996: 'RSA_size': Since OpenSSL 3.0
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(59,15): error C4996: 'RSA_private_decrypt': Since OpenSSL 3.0
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(79,115): warning C4312: “类型强制转换”: 从“int”转换到更大的“unsigned int *”
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(79,132): warning C4267: “参数”: 从“size_t”转换到“unsigned int”，可能丢失数据
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(77,16): error C4996: 'RSA_size': Since OpenSSL 3.0
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(78,47): error C4996: 'RSA_size': Since OpenSSL 3.0
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(79,15): error C4996: 'RSA_sign': Since OpenSSL 3.0
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(97,147): warning C4267: “参数”: 从“size_t”转换到“unsigned int”，可能丢失数据
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(95,16): error C4996: 'RSA_size': Since OpenSSL 3.0
+D:\vs编程\RSA_encrypt\RSA_encrypt\RSA_openssl.cpp(97,15): error C4996: 'RSA_verify': Since OpenSSL 3.0
