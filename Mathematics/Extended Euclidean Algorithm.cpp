@@ -1,41 +1,31 @@
 #include<stdio.h>
 
 //判断是否存在逆元
+int ex_gcd(int a, int m, int& x, int& y) {
+    if (m == 0) {
+        x = 1; y = 0;
+        return a;
+    }
+    int r = ex_gcd(m, a % m, x, y);
+    int t = x;
+    x = y;
+    y = t - a / m * y;
+    return r;
+}
+
+//扩展欧几里得
 int euclid_mod_reverse(int a, int m) {
-    // 判断 a, m 是否互素
-    int a_ = a, m_ = m;
-    while (m_ != 0) { // 当 m 为 0 时，a 就是最大公约数
-        int tmp = m_;
-        m_ = a_ % m_; // 更新 m 为 a 除以 m 的余数
-        a_ = tmp;   // 更新 a 为原来的 m
+    // a - 需要求逆元的数
+    // m - 模
+    // 返回值：std::int
+    // 返回值说明：返回a关于m乘法逆元；不存在返回-1
+    int x, y;
+    int gcd = ex_gcd(a, m, x, y);
+    if (gcd != 1) {//如果a和m不互质
+        return -1;//逆元不存在
     }
-    if (a_ != 1) return 0; // 不互素无逆元
-
-    //求逆元
-    int m0 = m;  // 保存原始模数
-    int x0 = 0, x1 = 1;  // x0 和 x1 初始化为 0 和 1
-    int tmp;
-
-    // 扩展欧几里得算法
-    while (a > 1) {
-        // q 是商
-        int q = a / m;
-        tmp = m;
-
-        // 更新 m 和 a
-        m = a % m;
-        a = tmp;
-
-        // 更新 x0 和 x1
-        tmp = x0;
-        x0 = x1 - q * x0;
-        x1 = tmp;
-    }
-
-    // 确保逆元为正数
-    if (x1 < 0) x1 += m0;
-
-    return x1;  // 返回逆元
+    //确保x为非负
+    return (x % m + m) % m;//返回 x 在模 m 下的值
 }
 
 int main() {

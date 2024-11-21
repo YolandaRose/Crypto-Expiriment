@@ -1,17 +1,20 @@
-#include <stdio.h>
+ï»¿#include "BandC.h"
+#include <iostream>
+#include <cstdio>
 
-// ¼ÆËãÄ£Ö¸ÊıÔËËãµÄº¯Êı
+
+// è®¡ç®—æ¨¡æŒ‡æ•°è¿ç®—çš„å‡½æ•°
 long long mod_exp(long long base, long long exponent, long long modulus) {
     long long result = 1;
-    base = base % modulus;  // ½«»ùÊıÈ¡Ä£
+    base = base % modulus;  // å°†åŸºæ•°å–æ¨¡
 
     while (exponent > 0) {
-        // Èç¹û exponent ÊÇÆæÊı£¬½«µ±Ç°»ùÊı³ËÈë½á¹û
+        // å¦‚æœ exponent æ˜¯å¥‡æ•°ï¼Œå°†å½“å‰åŸºæ•°ä¹˜å…¥ç»“æœ
         if (exponent % 2 == 1) {
             result = (result * base) % modulus;
         }
-        // exponent ³ıÒÔ 2£¬»ùÊıÆ½·½²¢È¡Ä£
-        exponent = exponent >> 1;  // µÈÍ¬ÓÚ exponent / 2
+        // exponent é™¤ä»¥ 2ï¼ŒåŸºæ•°å¹³æ–¹å¹¶å–æ¨¡
+        exponent = exponent >> 1;  // ç­‰åŒäº exponent / 2
         base = (base * base) % modulus;
     }
 
@@ -21,11 +24,23 @@ long long mod_exp(long long base, long long exponent, long long modulus) {
 int main() {
     long long base, exponent, modulus;
 
-    printf("ÇëÊäÈë»ùÊı¡¢Ö¸ÊıºÍÄ£Êı£º\n");
+    printf("è¯·è¾“å…¥åŸºæ•°ã€æŒ‡æ•°å’Œæ¨¡æ•°ï¼š\n");
     scanf_s("%lld %lld %lld", &base, &exponent, &modulus);
 
     long long result = mod_exp(base, exponent, modulus);
     printf("%lld^%lld mod %lld = %lld\n", base, exponent, modulus, result);
 
+    //è¿›åˆ¶è½¬æ¢æµ‹è¯•
+    int decimal = 7;
+    string binary = DecimalToBina(decimal);
+
+    // ä½¿ç”¨ C++ çš„ cout æ‰“å°
+    cout << "ä»¥ä¸‹æ˜¯åè¿›åˆ¶è½¬äºŒè¿›åˆ¶ï¼š" << endl;
+    cout << decimal << " -> " << binary << endl;
+
+    cout << "ä»¥ä¸‹æ˜¯äºŒè¿›åˆ¶è½¬åè¿›åˆ¶ï¼š" << endl;
+    cout << binary << " -> " << BinaryToDec(binary) << endl;
+
+    return 0;
     return 0;
 }
