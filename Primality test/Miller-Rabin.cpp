@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include "head.h"
 #include<stdlib.h>
 #include<time.h>
 
@@ -62,14 +62,3 @@ char miller_rabin_multiple_test(unsigned int n, unsigned int repeat_times) {
     return 1;//均通过依然不确定
 }
 
-int main() {
-    int n = 0;
-    int repeat_times = 0;
-    printf("Please input n repeat_times\n");
-    scanf_s("%d %d", &n, &repeat_times);
-    if (miller_rabin_multiple_test(n, repeat_times)) {
-        printf("\n%d 可能是素数\n", n);
-    }
-    else  printf("\n%d 不是素数\n", n);
-    return 0;
-} 
